@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv/
+
+# LangGraph local dev cache
+.langgraph_api
+
+# Variables de entorno / credenciales
+.env
+*.env
+
+# Jupyter 
+.ipynb_checkpoints/
