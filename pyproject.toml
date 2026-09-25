@@ -21,6 +21,7 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "grandalf>=0.8",
     "ipykernel>=7.3.0",
     "langgraph-cli[inmem]>=0.4.31",
 ]

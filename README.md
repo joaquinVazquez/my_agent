@@ -1,0 +1,52 @@
+# Install python3 and create a new project.
+
+python3 --version
+mkdir my_agent
+cd my_agent
+python3 -m venv .venv
+source .venv/bin/activate
+which python
+# install langgraph and langchain
+
+pip install --pre langgraph langchain langchain-openai
+pip install "langgraph-cli[inmem]"
+
+# run the agent
+langgraph dev
+
+
+# Install uv
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv --version
+
+# deactivate the virtual environment
+deactivate
+rm -rf .venv
+
+## init
+uv init
+uv venv
+
+# add dependencies
+uv add --pre langgraph langchain langchain-openai
+uv add --pre langchain-anthropic
+uv add "fastapi[standard]"
+
+# add dev dependencies
+uv add "langgraph-cli[inmem]" --dev
+uv add ipykernel --dev
+uv add grandalf --dev
+
+# run the agent
+uv run langgraph dev
+
+
+
+# install the project
+uv pip install -e .
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["*"]
